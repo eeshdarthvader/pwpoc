@@ -1,5 +1,5 @@
 const spaceImport = require('contentful-import')
-const exportFile = require('./export.json')
+const exportFile = require('./export')
 
 const { CONTENTFUL_SPACE_ID, CONTENTFUL_MANAGEMENT_TOKEN } = process.env
 
