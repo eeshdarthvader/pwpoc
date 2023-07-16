@@ -34,10 +34,13 @@ export default function Index({ preview, productSelectorBroker}) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const { productSelectorBroker } = (await getProductSelectorBroker(preview)) ?? {}
+  const data = (await getProductSelectorBroker(preview)) || {}
   
   return {
-    props: { preview, productSelectorBroker },
+    props: { 
+      preview, 
+      productSelectorBroker: data?.productSelectorBroker || {}
+  },
     revalidate: 10,
   }
 }
