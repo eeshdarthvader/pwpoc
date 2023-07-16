@@ -16,6 +16,6 @@ export default function Document({ theme }) {
 
 Document.getInitialProps = async (ctx) => {
   const initialProps = await NextDocument.getInitialProps(ctx)
-  const { productSelectorBroker } = (await getProductSelectorBroker()) ?? {}
-  return { ...initialProps, theme: productSelectorBroker.theme }
+  const data = (await getProductSelectorBroker()) || {}
+  return { ...initialProps, theme: data?.productSelectorBroker.theme || 'dark' }
 }
