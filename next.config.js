@@ -2,8 +2,5 @@
 module.exports = {
   images: {
     loader: 'custom',
-  },
-  experimental: {
-    appDir: false,
-  },
+  }
 }
