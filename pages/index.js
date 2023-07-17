@@ -33,7 +33,8 @@ export default function Index({ preview, productSelectorBroker}) {
   )
 }
 
-export async function getStaticProps({ preview = false }) {
+export async function getStaticProps(ctx) {
+  const preview = ctx.draftMode === true
   const data = (await getProductSelectorBroker(preview)) || {}
   
   return {
