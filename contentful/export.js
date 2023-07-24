@@ -444,6 +444,87 @@ module.exports = {
 					}
 				}
 			}
+		},
+		{
+			name: 'Background',
+			description: '',
+			displayField: 'title',
+			fields: [
+				{
+					id: 'title',
+					name: 'Title (internal use only)',
+					type: 'Symbol',
+					localized: false,
+					required: false,
+					validations: [],
+					disabled: false,
+					omitted: false
+				},
+				{
+					id: 'url',
+					name: 'URL',
+					type: 'Link',
+					localized: false,
+					required: true,
+					validations: [
+						{
+							linkContentType: ['url']
+						}
+					],
+					disabled: false,
+					omitted: false,
+					linkType: 'Entry'
+				},
+				{
+					id: 'disabledLocales',
+					name: 'Disabled Locales',
+					type: 'Array',
+					localized: false,
+					required: false,
+					validations: [],
+					disabled: false,
+					omitted: false,
+					items: {
+						type: 'Symbol',
+						validations: [
+							{
+								in: [
+									'de-DE',
+									'en-DE',
+									'de-AT',
+									'en-AT',
+									'it-IT',
+									'en-IT',
+									'fr-FR',
+									'en-FR',
+									'es-ES',
+									'en-ES',
+									'nl-NL',
+									'en-NL'
+								]
+							}
+						]
+					}
+				}
+			],
+			sys: {
+				space: {
+					sys: {
+						type: 'Link',
+						linkType: 'Space',
+						id: 'kcbf79ije7q7'
+					}
+				},
+				id: 'background',
+				type: 'ContentType',
+				environment: {
+					sys: {
+						id: 'master',
+						type: 'Link',
+						linkType: 'Environment'
+					}
+				}
+			}
 		}
 	]
 };

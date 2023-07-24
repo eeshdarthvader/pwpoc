@@ -1,30 +1,20 @@
-import Container from './container'
-import { EXAMPLE_PATH } from '../lib/constants'
+/**
+ * create a react component called Footer that renders a footer element with the text "All rights reserved" inside of it. 
+ * Export the component from the file. 
+ * It should stick to the bottom of the page. 
+ * Use CSS from Tailwind to style the footer. 
+ * The footer should be 100% width and 100px height. 
+ * It should have a background color of #333333. 
+ * The text should be white and centered. 
+ * The text should be 20px font size. 
+ * The text should be vertically centered.
+ * Include scalable capital logo in the footer
+ */
 
-export default function Footer() {
-  return (
-    <footer className="bg-accent-1 border-t border-accent-2">
-      <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/basic-features/pages"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
-          </div>
-        </div>
-      </Container>
-    </footer>
-  )
+export const Footer = () => {
+    return (
+        <footer className="bg-[#333333] h-[100px] flex justify-center items-center">
+        <img src="/images/scalable-capital-logo.svg" alt="scalable capital logo" className="h-[50px] w-[auto]"/>
+        </footer>
+    )
 }
